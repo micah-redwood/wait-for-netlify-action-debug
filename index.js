@@ -82,8 +82,7 @@ const waitForUrl = async (url, MAX_TIMEOUT) => {
       await axios.get(url);
       return;
     } catch (e) {
-      console.log(`URL ${url} unavailable, retrying...`);
-      console.log(e)
+      console.log(`URL ${url} unavailable, retrying...`, { errorCode: e && e.code, errorMessage: e && e.message });
       await new Promise((r) => setTimeout(r, 3000));
     }
   }
