@@ -83,6 +83,7 @@ const waitForUrl = async (url, MAX_TIMEOUT) => {
       return;
     } catch (e) {
       console.log(`URL ${url} unavailable, retrying...`);
+      console.log(e)
       await new Promise((r) => setTimeout(r, 3000));
     }
   }
