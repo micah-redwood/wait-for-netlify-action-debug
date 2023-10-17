@@ -79,7 +79,7 @@ const waitForUrl = async (url, MAX_TIMEOUT) => {
   const iterations = MAX_TIMEOUT / 3;
   for (let i = 0; i < iterations; i++) {
     try {
-      await axios.get(url);
+      await axios.head(url);
       return;
     } catch (e) {
       console.log(`URL ${url} unavailable, retrying...`, { errorCode: e && e.code, errorMessage: e && e.message });
